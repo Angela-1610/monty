@@ -52,7 +52,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void free_stack(stack_t *head);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 void push_func(stack_t **head, unsigned int counter);
 void pall_func(stack_t **head, unsigned int counter);
 void pint_func(stack_t **head, unsigned int counter);
